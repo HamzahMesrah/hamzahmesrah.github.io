@@ -318,7 +318,11 @@
 
     function resetData() {
         if(confirm('هل أنت متأكد من مسح البيانات لبدء أسبوع جديد؟')) {
-            localStorage.clear();
+            // حذف بيانات الأسبوع فقط والإبقاء على إعدادات الثيم
+            localStorage.removeItem('monDate');
+            localStorage.removeItem('monVal');
+            localStorage.removeItem('thuDate');
+            localStorage.removeItem('thuVal');
             location.reload();
         }
     }
